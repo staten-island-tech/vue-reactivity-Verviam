@@ -18,6 +18,6 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     }
   ]
-})
+}) //to add more pages, add to router
 
 export default router
