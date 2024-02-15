@@ -1,5 +1,5 @@
 <template>
-  <div><h1>{{ shoppincartarraynames }}</h1>
+  <div><h1>{{ website.name }}</h1>
   
   </div>
 </template>
