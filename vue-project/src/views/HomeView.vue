@@ -1,17 +1,22 @@
 <template>
   <div>
-    <ShoppingItems>
-      v-for
-      @click="addTocart(destination)"
-    </ShoppingItems>
+    <WebsitesCard
+      v-for="website in websites"
+      :key="website.name"
+      :Website="website"
+
+      ></WebsitesCard>
   </div>
 </template>
 
+<!-- @click="addTocart(destination)" -->
 <script setup>
-import ShoppingItems from '@/components/ShoppingItems.vue';
-const products = [
+import websites from '@/components/WebsitesCard.vue';
+const websites = [
   {
     name: 
+    price:
+    img:
   }
 ]
 
