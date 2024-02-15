@@ -6,6 +6,10 @@
 
 <script setup>
 
+const props = defineProps({
+    Websites: Object,
+})
+
 </script>
 
 <style lang="scss" scoped>
