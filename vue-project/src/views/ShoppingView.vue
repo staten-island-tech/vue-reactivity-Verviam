@@ -1,16 +1,15 @@
 <template>
-  <div class="shopping">
-    <h1>Shopping Cart Here</h1>
+  <div>
+    <ShoppingCart
+
+    ></ShoppingCart>
   </div>
 </template>
 
-<style>
+<script setup>
+import ShoppingCart from '@/components/ShoppingCart.vue';
+</script>
 
-@media (min-width: 1024px) { 
-  .shopping {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
+<style lang="scss" scoped>
+
 </style>

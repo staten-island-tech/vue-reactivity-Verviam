@@ -10,3 +10,4 @@
 
 //   return { count, doubleCount, increment }
 // })
+// can have data or functions here that's accessible for diff parts of code

@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<!-- @click="addTocart(destination)" -->
+
 <script setup>
 import WebsitesCard from '@/components/WebsitesCard.vue';
 const websites = [
