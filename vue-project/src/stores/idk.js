@@ -1,7 +1,3 @@
-
-// create variables for views
-
-
 // import { ref, computed } from 'vue'
 // import { defineStore } from 'pinia'
 
