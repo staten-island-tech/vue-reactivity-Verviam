@@ -1,12 +1,19 @@
-html, body, * {
-  padding: 0;
-  margin: 0;
-  font-size: 62.5%;
-  box-sizing: border-box;
-}
+@import url(base.css);
 
 a {
-  padding: 3rem;
-  transition: 0.4s
+  padding: 1rem;
+  transition: 0.4s;
+  font-size: var(--h2);
+  display: flex;
+  justify-content: space-around;
 }
 
+h1{
+  font-size: var(--h1);
+  text-align: center;
+  margin: 1rem;
+}
+
+h2{
+  font-size: var(--h2);
+}

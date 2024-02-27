@@ -66,7 +66,7 @@ const websites = [
     netProfitPerMonth: 6196, 
     price: 250000,
     description: "The best lunar Calendar site an Ezoic VIP partner. $7589 avg. net income, 1000+ top keywords, 4M monthly users. Diverse revenue, low costs, 8+ years of success.",
-    img: "https://d2jafhvbn4akdi.cloudfront.net/20d47434-0fa2-4f12-88dc-32f5f4f21437.png",
+    img: "https://d2jafhvbn4akdi.cloudfront.net/20d47434-0fa2-4f12-88dc-32f5f4f21437.PNG",
   },
   {
     name: "Spiel Times",

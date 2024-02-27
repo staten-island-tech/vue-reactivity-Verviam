@@ -4,22 +4,18 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <div class="wrapper">
-      <h1>Websites For Sale</h1>
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/shopping">Shopping Cart</RouterLink>
-      </nav>
-    </div>
+    <h1>Websites For Sale</h1>
+    <nav class="wrapper">
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/shopping">Shopping Cart</RouterLink>
+    </nav>
   </header>
 
   <RouterView />
 </template>
 
 <style scoped>
-
 .wrapper{
-  font-size: 5rem;
+  justify-content: center;
 }
-
 </style>
