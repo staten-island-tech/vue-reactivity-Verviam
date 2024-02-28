@@ -5,13 +5,19 @@
       :key="website.name"
       :Websites="website"
 
-      ></WebsitesCard>
+    ></WebsitesCard>
+    <ShoppingCart
+      v-if="shoppingCart.length > 0" console.log(shoppingCart) 
+
+    ></ShoppingCart>
   </div>
 </template>
 
 
 <script setup>
 import WebsitesCard from '@/components/WebsitesCard.vue';
+import ShoppingCart from '@/components/ShoppingCart.vue';
+
 const websites = [
   {
     name: "OfZenAndComputing.com",

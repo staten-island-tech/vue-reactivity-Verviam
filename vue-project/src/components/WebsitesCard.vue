@@ -9,6 +9,7 @@
     <div class="description-text">{{ Websites.description }}</div>
     <button @click="addToCart" class="add-to-cart">Add to Cart</button>
   </div>
+ 
 </template>
 
 <script setup>
@@ -20,7 +21,10 @@ const props = defineProps({
 const shoppingCart = []
 
 function addToCart() {
+  
+  this.Websites.push(website)
   const addedWebsite = this.parentElemet;
+  // key
   const websiteName = addedWebsite.querySelector(".website-name");
   shoppingCart.push(websiteName);
   console.log(shoppingCart)
@@ -40,9 +44,13 @@ img {
   display: flex;
   flex-wrap: wrap;
   width: 25%;
-  outline: 0.2rem solid #7FFF00
+  outline: 0.2rem solid #7FFF00;
+  transition: all 0.2s ease-out;
 }
 
+.card:hover{
+  transform: scale(1.03);
+}
 @media screen and (max-width: 1080px) {
   .card {
     width: 25%;
