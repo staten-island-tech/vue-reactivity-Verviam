@@ -24,7 +24,7 @@ function addToCart() {
   
   this.Websites.push(website)
   const addedWebsite = this.parentElemet;
-  // key
+  // key https://www.w3schools.com/vue/ref_ref.php
   const websiteName = addedWebsite.querySelector(".website-name");
   shoppingCart.push(websiteName);
   console.log(shoppingCart)
