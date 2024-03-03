@@ -2,33 +2,25 @@
   <div class="card">
     <h2 class="website-name">{{ Websites.name }}</h2>
     <img :src="Websites.img" alt="Picture of {{ Websites.name }}" />
-    <div class="type-text">Website Type: {{ Websites.type }}</div>
-    <div class="moneitization-text">Moneitization: {{ Websites.monetization }}</div>
-    <div class="net-profit-text">Net Profit Per Month: ${{ Websites.netProfitPerMonth }}</div>
-    <div class="price-text">Price: ${{ Websites.price }}</div>
-    <div class="description-text">{{ Websites.description }}</div>
-    <button @click="addToCart" class="add-to-cart">Add to Cart</button>
+    <div class="websites-qualities-text">
+      <div class="type-text">Website Type: {{ Websites.type }}</div>
+      <div class="moneitization-text">Moneitization: {{ Websites.monetization }}</div>
+      <div class="description-text">{{ Websites.description }}</div>
+      <div class="net-profit-text">Net Profit Per Month: ${{ netProfitPerMonth }}</div>
+      <div class="price-text">Price: ${{ Price }}</div>
+    </div>
+      <button @click='addToCart'>Add To Cart</button>
   </div>
- 
 </template>
 
 <script setup>
 
 const props = defineProps({
   Websites: Object,
+  netProfitPerMonth: Number,
+  Price: Number
 });
 
-const shoppingCart = []
-
-function addToCart() {
-  
-  this.Websites.push(website)
-  const addedWebsite = this.parentElemet;
-  // key https://www.w3schools.com/vue/ref_ref.php
-  const websiteName = addedWebsite.querySelector(".website-name");
-  shoppingCart.push(websiteName);
-  console.log(shoppingCart)
-}
 </script> 
 
 <style lang="scss" scoped>
@@ -44,13 +36,18 @@ img {
   display: flex;
   flex-wrap: wrap;
   width: 25%;
-  outline: 0.2rem solid #7FFF00;
-  transition: all 0.2s ease-out;
+  outline: 0.2rem solid #7FFF00
 }
 
-.card:hover{
-  transform: scale(1.03);
+.websites-qualities-text{
+  font-size: 1em;
+  padding: 1em;
+  text-align: center;
 }
+.description-text{
+  padding: 2em;
+}
+
 @media screen and (max-width: 1080px) {
   .card {
     width: 25%;

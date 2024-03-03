@@ -4,6 +4,9 @@
       v-for="website in websites"
       :key="website.name"
       :Websites="website"
+      :Price="website.price"
+      :netProfitPerMonth="website.netProfitPerMonth"
+      @addToCart="addToCart(website)"
 
     ></WebsitesCard>
     <ShoppingCart
@@ -17,6 +20,25 @@
 <script setup>
 import WebsitesCard from '@/components/WebsitesCard.vue';
 import ShoppingCart from '@/components/ShoppingCart.vue';
+import {ref, computed} from "vue"
+
+const shoppingCart = ref([]);
+
+const addToCart = () => {
+  
+  console.log(website.value.key)
+}
+
+// }
+// function addToCart(website) {
+//   website.key
+//   this.Websites.push(website)
+//   const addedWebsite = this.parentElemet;
+//   // key https://www.w3schools.com/vue/ref_ref.php
+//   const websiteName = addedWebsite.querySelector(".website-name");
+//   shoppingCart.push(websiteName);
+//   console.log(shoppingCart)
+// }
 
 const websites = [
   {
