@@ -1,13 +1,12 @@
 <template>
   <div>
     <ShoppingCart
-      v-if="shoppingCart.length > 0" 
-      v-for="websiteObj in shoppingCart"
-      :key="websiteObj.name"
-      :Website="websiteObj"
-      :Price="websiteObj.price"
-      :netProfitPerMonth="websiteObj.netProfitPerMonth"
-      @removeFromCart="removeFromCart(position)"
+      v-for="(item, price, netProfitPerMonth) in shoppingCart"
+      :key="item"
+      :Website="item.website"
+      :Price="price"
+      :netProfitPerMonth="netProfitPerMonth"
+      @removeFromCart="removeFromCart(item)"
 
     ></ShoppingCart>
     
@@ -16,6 +15,7 @@
 
 <script setup>
 import ShoppingCart from '@/components/ShoppingCart.vue';
+
 </script>
 
 <style lang="scss" scoped>

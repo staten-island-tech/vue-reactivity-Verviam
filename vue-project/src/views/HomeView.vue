@@ -10,13 +10,12 @@
 
     ></WebsitesCard>
     <ShoppingCart
-      v-if="shoppingCart.length > 0" 
-      v-for="(item, position) in shoppingCart"
-      :key="position"
+      v-for="(item, price, netProfitPerMonth) in shoppingCart"
+      :key="item"
       :Website="item.website"
-      :Price="item.price"
-      :netProfitPerMonth="item.netProfitPerMonth"
-      @removeFromCart="removeFromCart(position)"
+      :Price="price"
+      :netProfitPerMonth="netProfitPerMonth"
+      @removeFromCart="removeFromCart(item)"
 
     ></ShoppingCart>
 
@@ -33,12 +32,20 @@ const shoppingCart = ref([]);
 
 
 function addToCart(website) {
-  shoppingCart.value.push(website)
+  shoppingCart.value.push({website, Price: website.price, netProfitPerMonth: website.netProfitPerMonth})
   console.log(shoppingCart)
 }
 
-function removeFromCart(position){
+function removeFromCart(item){
 
+}
+
+function addNetProfit(){
+
+}
+
+function addPrices(){
+  
 }
 
 const websites = [

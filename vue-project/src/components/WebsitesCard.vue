@@ -10,7 +10,7 @@
       <div class="price-text">Price: ${{ Price }}</div>
     </div>
       <button @click="$emit('addToCart', props.Websites)">Add To Cart</button> 
-  </div>
+    </div>
   
 </template>
 
