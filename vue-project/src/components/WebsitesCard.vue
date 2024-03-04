@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <h2 class="website-name">{{ Websites.name }}</h2>
-    <img :src="Websites.img" alt="Picture of {{ Websites.name }}" />
+    <img :src="Websites.img" :alt="'Picture of ' + Websites.name" />
     <div class="websites-qualities-text">
       <div class="type-text">Website Type: {{ Websites.type }}</div>
       <div class="moneitization-text">Moneitization: {{ Websites.monetization }}</div>
@@ -11,6 +11,7 @@
     </div>
       <button @click="$emit('addToCart', props.Websites)">Add To Cart</button> 
   </div>
+  
 </template>
 
 <script setup>
