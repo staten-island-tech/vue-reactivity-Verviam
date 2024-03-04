@@ -9,7 +9,7 @@
       <div class="net-profit-text">Net Profit Per Month: ${{ netProfitPerMonth }}</div>
       <div class="price-text">Price: ${{ Price }}</div>
     </div>
-      <button @click='addToCart'>Add To Cart</button>
+      <button @click="$emit('addToCart', props.Websites)">Add To Cart</button> 
   </div>
 </template>
 

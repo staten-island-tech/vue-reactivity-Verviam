@@ -10,9 +10,16 @@
 
     ></WebsitesCard>
     <ShoppingCart
-      v-if="shoppingCart.length > 0" console.log(shoppingCart) 
+      v-if="shoppingCart.length > 0" 
+      v-for="(item, position) in shoppingCart"
+      :key="position"
+      :Website="item.website"
+      :Price="item.price"
+      :netProfitPerMonth="item.netProfitPerMonth"
+      @removeFromCart="removeFromCart(position)"
 
     ></ShoppingCart>
+
   </div>
 </template>
 
@@ -24,21 +31,15 @@ import {ref, computed} from "vue"
 
 const shoppingCart = ref([]);
 
-const addToCart = () => {
-  
-  console.log(website.value.key)
+
+function addToCart(website) {
+  shoppingCart.value.push(website)
+  console.log(shoppingCart)
 }
 
-// }
-// function addToCart(website) {
-//   website.key
-//   this.Websites.push(website)
-//   const addedWebsite = this.parentElemet;
-//   // key https://www.w3schools.com/vue/ref_ref.php
-//   const websiteName = addedWebsite.querySelector(".website-name");
-//   shoppingCart.push(websiteName);
-//   console.log(shoppingCart)
-// }
+function removeFromCart(position){
+
+}
 
 const websites = [
   {
