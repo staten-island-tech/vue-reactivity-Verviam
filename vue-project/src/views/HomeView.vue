@@ -11,4 +11,4 @@ import WebsitesCard from '@/components/WebsitesCard.vue';
 
 </script>
 
-<style lang="scss" scoped></style>@/stores/shoppingCart
+<style lang="scss" scoped></style>

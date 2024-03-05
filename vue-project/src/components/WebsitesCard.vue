@@ -19,12 +19,12 @@ import { websites } from '@/stores/websiteArr';
 import { store } from '@/stores/shoppingCart';
 
 function addToCart(website) {
-  store.shoppingCart.push({
+  store.push({
     website, 
     Price: website.price, 
     netProfitPerMonth: website.netProfitPerMonth
   })
-  console.log(store.shoppingCart)
+  console.log(store.website)
 }
 </script> 
 
