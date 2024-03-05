@@ -7,7 +7,7 @@
     <div v-else>
       <div v-for="Website in store" class="website-item">
         <h2 class="website-name">{{ Website.Website }}</h2>
-        <img :src="Website.Img" :alt="'Picture of ' + Website.Website" />
+        <img :src="Website.Img" :alt="'Pictuqre of ' + Website.Website" />
         <div class="net-profit-text">
           Net Profit Per Month: ${{ Website.netProfitPerMonth }}
         </div>
@@ -15,8 +15,8 @@
         <button @click="removeFromCart(Website)">Remove From Cart</button>
       </div>
       <div class="total-prices-text">
-        <h2>Total Net Profit Per Month: ${{ addedNetProfit }}</h2>
-        <h2>Total Price: ${{ netProfit }}</h2>
+        <h2>Total Net Profit Per Month: {{ netProfit.netProfit }}</h2>
+        <h2>Total Price: {{ Price.totalPrice }}</h2>
       </div>
     </div>
   </div>
@@ -29,15 +29,18 @@ import { netProfit } from "@/stores/netProfitCounter";
 
 function removeFromCart(website) {}
 
-function addedNetProfit() {
+function addedNetProfit(arr) {
   store.forEach((website) => {
-    netProfit + website.netProfit;
+    netProfit += website.netProfit;
   });
 }
-addedNetProfit();
-function addedPrices() {
-  Price;
+addedNetProfit(store);
+function addedPrices(arr) {
+  store.forEach((website) => {
+    Price += website.Price;
+  });
 }
+addedPrices(store);
 </script>
 
 <style lang="scss" scoped>
