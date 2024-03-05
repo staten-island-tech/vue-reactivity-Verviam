@@ -1,27 +1,12 @@
 <template>
   <div>
-    
     <WebsitesCard></WebsitesCard>
-
   </div>
 </template>
 
 
 <script setup>
 import WebsitesCard from '@/components/WebsitesCard.vue';
-
-
-function removeFromCart(item){
-
-}
-
-function addNetProfit(){
-
-}
-
-function addPrices(){
-  
-}
 
 
 </script>

@@ -1,20 +1,25 @@
 <template>
-  <div>
-    <ShoppingCart
-      v-for="(item, price, netProfitPerMonth) in shoppingCart"
-      :key="item"
-      :Website="item.website"
-      :Price="price"
-      :netProfitPerMonth="netProfitPerMonth"
-      @removeFromCart="removeFromCart(item)"
-
-    ></ShoppingCart>
-    
+  <div class="shopping-cart">
+    <h1>Order Here</h1>
+    <div v-if="cart.length === 0">
+      <h2>Your cart is empty</h2>
+  </div>
   </div>
 </template>
 
 <script setup>
-import ShoppingCart from '@/components/ShoppingCart.vue';
+
+function removeFromCart(item){
+
+}
+
+function addNetProfit(){
+
+}
+
+function addPrices(){
+  
+}
 
 </script>
 
