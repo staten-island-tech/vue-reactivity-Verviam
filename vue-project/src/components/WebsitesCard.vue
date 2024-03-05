@@ -1,28 +1,31 @@
 <template>
-  <div class="card">
-    <h2 class="website-name">{{ Websites.name }}</h2>
-    <img :src="Websites.img" :alt="'Picture of ' + Websites.name" />
+  <div class="card" v-for="website in websites">
+    <h2 class="website-name">{{ website.name }}</h2>
+    <img :src="website.img" :alt="'Picture of ' + website.name" />
     <div class="websites-qualities-text">
-      <div class="type-text">Website Type: {{ Websites.type }}</div>
-      <div class="moneitization-text">Moneitization: {{ Websites.monetization }}</div>
-      <div class="description-text">{{ Websites.description }}</div>
-      <div class="net-profit-text">Net Profit Per Month: ${{ netProfitPerMonth }}</div>
-      <div class="price-text">Price: ${{ Price }}</div>
+      <div class="type-text">Website Type: {{ website.type }}</div>
+      <div class="moneitization-text">Moneitization: {{ website.monetization }}</div>
+      <div class="description-text">{{ website.description }}</div>
+      <div class="net-profit-text">Net Profit Per Month: ${{ website.netProfitPerMonth }}</div>
+      <div class="price-text">Price: ${{ website.price }}</div>
     </div>
-      <button @click="$emit('addToCart', props.Websites)">Add To Cart</button> 
+      <button @click="addToCart(website)">Add To Cart</button> 
     </div>
   
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { websites } from '@/stores/websiteArr';
+import { store } from '@/stores/shoppingCart';
 
-const props = defineProps({
-  Websites: Object,
-  netProfitPerMonth: Number,
-  Price: Number
-});
-
+function addToCart(website) {
+  store.shoppingCart.push({
+    website, 
+    Price: website.price, 
+    netProfitPerMonth: website.netProfitPerMonth
+  })
+  console.log(store.shoppingCart)
+}
 </script> 
 
 <style lang="scss" scoped>
