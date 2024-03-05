@@ -3,13 +3,13 @@
     <h2 class="website-name">{{ website.name }}</h2>
     <img :src="website.img" :alt="'Picture of ' + website.name" />
     <div class="websites-qualities-text">
-      <div class="type-text">Website Type: {{ website.type }}</div>
-      <div class="moneitization-text">Moneitization: {{ website.monetization }}</div>
+      <div class="type-text">Website Type: ${{ website.type }}</div>
+      <div class="moneitization-text">Moneitization: ${{ website.monetization }}</div>
       <div class="description-text">{{ website.description }}</div>
       <div class="net-profit-text">Net Profit Per Month: ${{ website.netProfitPerMonth }}</div>
       <div class="price-text">Price: ${{ website.price }}</div>
     </div>
-      <button @click="addToCart(website.name, website.price, website.netProfitPerMonth)">Add To Cart</button> 
+      <button @click="addToCart(website.name, website.price, website.netProfitPerMonth, website.img)">Add To Cart</button> 
     </div>
   
 </template>
@@ -18,13 +18,14 @@
 import { websites } from '@/stores/websiteArr';
 import { store } from '@/stores/shoppingCart';
 
-function addToCart(name, price, netProfitPerMonth) {
+function addToCart(name, price, netProfitPerMonth, img) {
   store.push({
     Website: name, 
     Price: price, 
-    netProfitPerMonth: netProfitPerMonth
+    netProfitPerMonth: netProfitPerMonth,
+    Img: img
   })
-  console.log(store.website)
+  console.log(store)
 }
 </script> 
 
