@@ -1,5 +1,6 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from "vue-router";
+import { ShoppingCartCount } from "./stores/shoppingCartCount";
 </script>
 
 <template>
@@ -8,6 +9,7 @@ import { RouterLink, RouterView } from 'vue-router'
     <nav class="wrapper">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/shopping">Shopping Cart</RouterLink>
+      <h2>Items In Shopping Cart: {{ ShoppingCartCount.Count }}</h2>
     </nav>
   </header>
 
@@ -15,7 +17,7 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-.wrapper{
+.wrapper {
   justify-content: center;
 }
 </style>

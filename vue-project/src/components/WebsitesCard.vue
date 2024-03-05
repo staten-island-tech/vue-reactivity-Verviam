@@ -31,6 +31,7 @@
 <script setup>
 import { websites } from "@/stores/websiteArr";
 import { store } from "@/stores/shoppingCartArr";
+import { ShoppingCartCount } from "@/stores/shoppingCartCount";
 
 function addToCart(name, price, netProfitPerMonth, img) {
   store.push({
@@ -39,6 +40,7 @@ function addToCart(name, price, netProfitPerMonth, img) {
     netProfitPerMonth: netProfitPerMonth,
     Img: img,
   });
+  ShoppingCartCount.Count += 1;
   console.log(store);
 }
 </script>

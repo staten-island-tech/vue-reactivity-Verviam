@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="everything">
     <WebsitesCard></WebsitesCard>
   </div>
 </template>
@@ -8,4 +8,9 @@
 import WebsitesCard from "@/components/WebsitesCard.vue";
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.everything {
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>
