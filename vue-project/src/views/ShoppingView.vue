@@ -15,8 +15,8 @@
         <button @click="removeFromCart(Website)">Remove From Cart</button>
       </div>
       <div class="total-prices-text">
-        <h2>Total Net Profit Per Month: {{ netProfit.netProfit }}</h2>
-        <h2>Total Price: {{ Price.totalPrice }}</h2>
+        <h2>Total Net Profit Per Month: ${{ netProfit.netProfit }}</h2>
+        <h2>Total Price: ${{ Price.totalPrice }}</h2>
       </div>
     </div>
   </div>
@@ -27,17 +27,19 @@ import { store } from "@/stores/shoppingCartArr";
 import { Price } from "@/stores/priceCounter";
 import { netProfit } from "@/stores/netProfitCounter";
 
-function removeFromCart(website) {}
+function removeFromCart(website) {
+  store.splice(website);
+}
 
 function addedNetProfit(arr) {
   store.forEach((website) => {
-    netProfit += website.netProfit;
+    netProfit.netProfit += website.netProfitPerMonth;
   });
 }
 addedNetProfit(store);
 function addedPrices(arr) {
   store.forEach((website) => {
-    Price += website.Price;
+    Price.totalPrice += website.Price;
   });
 }
 addedPrices(store);
