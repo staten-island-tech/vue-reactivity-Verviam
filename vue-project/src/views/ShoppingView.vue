@@ -16,7 +16,7 @@
       </div>
       <div class="total-prices-text">
         <h2>Total Net Profit Per Month: ${{ addedNetProfit }}</h2>
-        <h2>Total Price: ${{ addedPrices }}</h2>
+        <h2>Total Price: ${{ netProfit }}</h2>
       </div>
     </div>
   </div>
@@ -30,9 +30,11 @@ import { netProfit } from "@/stores/netProfitCounter";
 function removeFromCart(website) {}
 
 function addedNetProfit() {
-  netProfit;
+  store.forEach((website) => {
+    netProfit + website.netProfit;
+  });
 }
-
+addedNetProfit();
 function addedPrices() {
   Price;
 }
