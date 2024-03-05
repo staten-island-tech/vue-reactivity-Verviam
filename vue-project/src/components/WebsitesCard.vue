@@ -30,7 +30,7 @@
 
 <script setup>
 import { websites } from "@/stores/websiteArr";
-import { store } from "@/stores/shoppingCart";
+import { store } from "@/stores/shoppingCartArr";
 
 function addToCart(name, price, netProfitPerMonth, img) {
   store.push({
@@ -92,3 +92,4 @@ img {
   }
 }
 </style>
+@/stores/shoppingCartArr
