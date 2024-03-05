@@ -9,7 +9,7 @@
       <div class="net-profit-text">Net Profit Per Month: ${{ website.netProfitPerMonth }}</div>
       <div class="price-text">Price: ${{ website.price }}</div>
     </div>
-      <button @click="addToCart(website)">Add To Cart</button> 
+      <button @click="addToCart(website.name, website.price, website.netProfitPerMonth)">Add To Cart</button> 
     </div>
   
 </template>
@@ -18,11 +18,11 @@
 import { websites } from '@/stores/websiteArr';
 import { store } from '@/stores/shoppingCart';
 
-function addToCart(website) {
+function addToCart(name, price, netProfitPerMonth) {
   store.push({
-    website, 
-    Price: website.price, 
-    netProfitPerMonth: website.netProfitPerMonth
+    Website: name, 
+    Price: price, 
+    netProfitPerMonth: netProfitPerMonth
   })
   console.log(store.website)
 }
