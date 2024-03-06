@@ -1,11 +1,11 @@
 <template>
-  <div class="shopping-cart">
-    <h1>Order Here</h1>
-    <div v-if="store.length === 0">
-      <h2>Your cart is empty</h2>
-      <div class="total-prices-text"></div>
-    </div>
-    <div v-else>
+  <h1>Order Here</h1>
+  <div v-if="store.length === 0">
+    <h2>Your cart is empty</h2>
+  </div>
+
+  <div v-else>
+    <div class="shopping-cart">
       <div v-for="(Website, index) in store" :key="index" class="website-card">
         <h2 class="website-name">{{ Website.Website }}</h2>
         <img
@@ -30,10 +30,17 @@ import { netProfit } from "@/stores/netProfitCounter";
 import { ShoppingCartCount } from "@/stores/shoppingCartCount";
 
 function removeFromCart(index) {
-  store.splice(index, 1);
   ShoppingCartCount.Count -= 1;
-  Price.totalPrice -= store[index].Price;
+  subtractNetProfit(index);
+  subtractProfit(index);
+  store.splice(index, 1);
+}
+function subtractNetProfit(index) {
   netProfit.netProfit -= store[index].netProfitPerMonth;
+  console.log(store[index]);
+}
+function subtractProfit(index) {
+  Price.totalPrice -= store[index].Price;
 }
 </script>
 
@@ -57,5 +64,19 @@ function removeFromCart(index) {
 .website-img {
   height: 250px;
   width: 250px;
+}
+.shopping-cart {
+  display: flex;
+  justify-content: center;
+}
+.net-profit-text {
+  text-align: center;
+  padding: 1em;
+  color: dimgray;
+}
+.price-text {
+  text-align: center;
+  padding: 1em;
+  color: dimgray;
 }
 </style>
