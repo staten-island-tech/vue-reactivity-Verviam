@@ -6,14 +6,20 @@ a {
   font-size: var(--h2);
   display: flex;
   justify-content: space-around;
+  color: gray;
+}
+.a:hover {
+  background-color: dimgray;
 }
 
 h1 {
   font-size: var(--h1);
   text-align: center;
   margin: 1rem;
+  color: dimgray;
 }
 
 h2 {
   font-size: var(--h2);
+  color: dimgray;
 }

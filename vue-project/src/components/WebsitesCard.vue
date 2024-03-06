@@ -5,7 +5,7 @@
     <div class="websites-qualities-text">
       <div class="type-text">Website Type: ${{ website.type }}</div>
       <div class="moneitization-text">
-        Moneitization: ${{ website.monetization }}
+        Moneitization: {{ website.monetization }}
       </div>
       <div class="description-text">{{ website.description }}</div>
       <div class="net-profit-text">
@@ -62,8 +62,9 @@ function addPrices(arr) {
 
 <style lang="scss" scoped>
 img {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: auto;
+  margin: 2rem;
 }
 
 .card {
@@ -72,17 +73,24 @@ img {
   margin: 2rem;
   display: flex;
   flex-wrap: wrap;
-  width: 25%;
-  outline: 0.2rem solid #7fff00;
+  width: 30%;
+  outline: 0.2rem solid dimgray;
+  justify-content: center;
 }
 
 .websites-qualities-text {
   font-size: 1em;
-  padding: 1em;
+  padding: 0.5rem;
   text-align: center;
+  color: dimgray;
 }
 .description-text {
   padding: 2em;
+}
+.website-name {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
 }
 
 @media screen and (max-width: 1080px) {

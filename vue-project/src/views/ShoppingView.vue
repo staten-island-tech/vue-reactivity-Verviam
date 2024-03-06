@@ -44,11 +44,15 @@ function removeFromCart(index) {
   margin: 2rem;
   display: flex;
   flex-wrap: wrap;
-  width: 25%;
-  outline: 0.2rem solid #7fff00;
+  width: 30%;
+  outline: 0.2rem solid dimgray;
+  justify-content: center;
 }
 .website-name {
   font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
 }
 .website-img {
   height: 250px;
