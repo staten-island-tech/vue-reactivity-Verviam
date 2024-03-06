@@ -61,6 +61,7 @@ img {
   width: 300px;
   height: auto;
   margin: 2rem;
+  display: block;
 }
 
 .card {

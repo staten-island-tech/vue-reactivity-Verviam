@@ -64,6 +64,7 @@ function subtractProfit(index) {
 .website-img {
   height: 250px;
   width: 250px;
+  display: block;
 }
 .shopping-cart {
   display: flex;
