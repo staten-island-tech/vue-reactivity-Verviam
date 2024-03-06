@@ -32,6 +32,8 @@
 import { websites } from "@/stores/websiteArr";
 import { store } from "@/stores/shoppingCartArr";
 import { ShoppingCartCount } from "@/stores/shoppingCartCount";
+import { Price } from "@/stores/priceCounter";
+import { netProfit } from "@/stores/netProfitCounter";
 
 function addToCart(name, price, netProfitPerMonth, img) {
   store.push({
@@ -42,6 +44,19 @@ function addToCart(name, price, netProfitPerMonth, img) {
   });
   ShoppingCartCount.Count += 1;
   console.log(store);
+  addNetProfit(store);
+  addPrices(store);
+}
+
+function addNetProfit(arr) {
+  store.forEach((website) => {
+    netProfit.netProfit += website.netProfitPerMonth;
+  });
+}
+function addPrices(arr) {
+  store.forEach((website) => {
+    Price.totalPrice += website.Price;
+  });
 }
 </script>
 
