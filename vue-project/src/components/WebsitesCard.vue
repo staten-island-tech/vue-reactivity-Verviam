@@ -3,7 +3,7 @@
     <h2 class="website-name">{{ website.name }}</h2>
     <img :src="website.img" :alt="'Picture of ' + website.name" />
     <div class="websites-qualities-text">
-      <div class="type-text">Website Type: ${{ website.type }}</div>
+      <div class="type-text">Website Type: {{ website.type }}</div>
       <div class="moneitization-text">
         Moneitization: {{ website.monetization }}
       </div>
